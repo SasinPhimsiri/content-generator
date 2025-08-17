@@ -1,5 +1,12 @@
 # Content Generator
 
+## 🎯 Quick Demo
+Try it instantly without any setup: **[Live Demo on Hugging Face Spaces](https://huggingface.co/spaces/Sasinp/content_generator)** 🚀
+
+No installation required - just click and start generating professional business content!
+
+---
+
 ## 🚀 Get Started in 3 Steps
 
 ### Step 1: Install Ollama
@@ -430,17 +437,3 @@ uv run python main.py full
 - **Visit the interactive API docs** at http://localhost:8000/docs
 - **Review the logs** in the `logs/` directory
 - **Test individual components** using the commands in the 🛠️ section
-
-## 🎉 Pro Tips
-
-- **Be specific with topics** - "AI in Healthcare Diagnostics" vs "AI"
-- **Use the keywords field** - helps with SEO and focus
-- **Check your Excel file** - great for content planning
-- **Try different industries** - same topic, different angles
-- **Let it run** - the 2-3 minute wait is worth the quality!
-
----
-
-**Happy writing! 🚀**
-
-*Built with ❤️ for creating amazing business content*
