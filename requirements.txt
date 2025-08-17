@@ -1,0 +1,6 @@
+gradio==4.44.0
+transformers>=4.51.0
+torch>=2.1.0
+accelerate>=0.24.1
+sentencepiece>=0.1.99
+numpy<2.0.0

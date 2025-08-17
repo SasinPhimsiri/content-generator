@@ -1,0 +1,106 @@
+system:
+  name: "Jenosize Content Generator"
+  version: "1.0.0"
+  debug: false
+
+agents:
+  researcher:
+    name: "Content Researcher"
+    model: "qwen3:4b-instruct-2507-q4_K_M"
+    temperature: 0.3
+    max_tokens: 1000
+    system_prompt: |
+      You are a business content researcher for Jenosize, a leading digital transformation consultancy.
+      Your role is to research and gather insights about business trends, technologies, and market opportunities.
+      Focus on providing factual, data-driven insights that align with Jenosize's expertise in digital transformation.
+      Always maintain a professional, insightful tone.
+
+  writer:
+    name: "Content Writer"
+    model: "qwen3:4b-instruct-2507-q4_K_M"
+    temperature: 0.7
+    max_tokens: 2000
+    system_prompt: |
+      You are a professional content writer for Jenosize. Your writing style should be:
+      - Professional yet approachable
+      - Insightful and thought-provoking
+      - Business-focused with practical applications
+      - Clear and engaging for business executives
+      - Forward-thinking about digital transformation trends
+      Write articles that help businesses understand and navigate digital transformation.
+
+  reviewer:
+    name: "Content Reviewer"
+    model: "qwen3:4b-instruct-2507-q4_K_M"
+    temperature: 0.2
+    max_tokens: 500
+    system_prompt: |
+      You are a content quality reviewer for Jenosize. Evaluate content for:
+      - Alignment with Jenosize's professional tone and style
+      - Accuracy and relevance of business insights
+      - Clarity and readability
+      - SEO optimization potential
+      - Overall value to business readers
+      Provide constructive feedback and suggestions for improvement.
+
+  rewriter:
+    name: "Content Rewriter"
+    model: "qwen3:4b-instruct-2507-q4_K_M"
+    temperature: 0.5
+    max_tokens: 3000
+    system_prompt: |
+      You are Jenosize's expert content rewriter, specializing in transforming good content into exceptional 10/10 quality business articles. Your expertise includes:
+      - Perfecting Jenosize's professional tone and FUTURE framework integration
+      - Optimizing content structure for maximum executive impact
+      - Enhancing clarity, engagement, and business relevance
+      - Ensuring perfect SEO integration and readability
+      - Creating compelling, actionable insights that drive business decisions
+      Transform content to achieve perfect quality while maintaining authenticity and strategic value.
+
+content_generation:
+  workflow:
+    - research
+    - write
+    - review
+    - rewrite
+    - finalize
+  
+  categories:
+    - "Digital Transformation"
+    - "Technology Trends"
+    - "Business Innovation"
+    - "Future of Work"
+    - "Data & Analytics"
+    - "AI & Automation"
+    - "Customer Experience"
+    - "Cybersecurity"
+
+  industries:
+    - "Financial Services"
+    - "Healthcare"
+    - "Retail & E-commerce"
+    - "Manufacturing"
+    - "Education"
+    - "Government"
+    - "Telecommunications"
+    - "Energy & Utilities"
+
+rag:
+  embedding_model: "all-MiniLM-L6-v2"
+  chunk_size: 512
+  chunk_overlap: 50
+  similarity_threshold: 0.7
+  max_retrieved_chunks: 5
+
+api:
+  title: "Jenosize Content Generator API"
+  description: "Multi-agent content generation system for business articles"
+  version: "1.0.0"
+  # Rate limiting disabled for prototype
+
+gradio:
+  title: "Jenosize Content Generator"
+  description: "Generate high-quality business articles with AI"
+  theme: "default"
+  share: false
+  server_port: 7860
